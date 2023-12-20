@@ -40,7 +40,6 @@ And you can display it on [Waybar](https://github.com/Alexays/Waybar) with [Cust
 {
   "custom/gnome-pomodoro": {
     "exec": "/path/to/custom-script.bash",
-    "return-type": "json",
     "interval": 1
   }
 }
