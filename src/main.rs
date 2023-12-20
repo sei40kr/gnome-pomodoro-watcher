@@ -8,8 +8,6 @@ use async_std::stream::StreamExt;
 use serde::Serialize;
 use zbus::{dbus_proxy, Connection};
 
-#[derive(Serialize)]
-#[serde(tag = "type")]
 enum State {
     Stopped,
     Pomodoro,
