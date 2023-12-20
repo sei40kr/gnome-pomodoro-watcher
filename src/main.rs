@@ -48,7 +48,7 @@ struct Properties {
 
 #[derive(Serialize)]
 struct PropertiesJson<'a> {
-    remaining_time_in_secs: u64,
+    remaining_secs: u64,
     is_paused: bool,
     state: &'a str,
 }
@@ -94,7 +94,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         println!(
             "{}",
             serde_json::to_string(&PropertiesJson {
-                remaining_time_in_secs: (props.state_duration - props.elapsed).as_secs(),
+                remaining_secs: (props.state_duration - props.elapsed).as_secs(),
                 is_paused: props.is_paused,
                 state: props.state.as_str(),
             })
