@@ -102,6 +102,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
         )
     };
 
+    // Print initial properties in the case that the GNOME Pomodoro is not
+    // running.
+    print_props_json(&props.lock().unwrap());
+
     futures_util::try_join!(
         async {
             let mut elapsed_changed = proxy.receive_elapsed_changed().await;
